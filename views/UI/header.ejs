@@ -1,0 +1,93 @@
+<!--<div class="modal" id="menu-down">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">사용자 정보</h5>
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                <div class="col-xl-6">
+                    <div class="row">
+                        <div class="col-xl-4"></div>
+                        <div class="col-xl-4">
+                        </div>
+                        <div class="col-xl-4"></div>
+
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <div class="col-xl-4"></div>
+                    <div class="col-xl-4" id="info">
+                    </div>
+                    <div class="col-xl-4"></div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+<!-- Navigation starts -->
+<div class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+
+    <ul class="nav navbar-nav">
+
+        <!-- Upload to server link. Class "dropdown-big" creates big dropdown -->
+        <li class="dropdown dropdown-big" style="box-shadow:5px 0 5px -5px  #C0C0C0; width: 200px">
+            <a href="#" class="dropdown-toggle" data-toggle="modal" data-target="#Layer" style="padding-top:10px; padding-bottom: 11px;"><span
+                        class="label label-danger"><i class="fa fa-gears"></i></span>&nbsp;Layer단위설정</a>
+        </li>
+        <li class="dropdown dropdown-big" style="box-shadow:5px 0 5px -5px  #C0C0C0;width: 200px">
+            <a class="dropdown-toggle" href="#" data-toggle="modal" data-target="#valueOptionModal"
+               id="showValueOptionModalBtn" style="padding-top:10px; padding-bottom: 11px;">
+                <span class="label label-warning"><i class="fa fa-check"></i></span>&nbsp;값표시 설정
+            </a>
+        </li>
+        <li class="dropdown dropdown-big" style="box-shadow:5px 0 5px -5px  #C0C0C0;width: 200px;">
+            <a class="dropdown-toggle" href="#" data-toggle="modal" data-target="#Object" id="object"
+               style="padding-top:10px; padding-bottom: 11px;">
+                <span class="label label-info"><i class="fa fa-check"></i></span>&nbsp;표현Object 설정
+            </a>
+        </li>
+
+        <!--        <li class="dropdown dropdown-big" style="box-shadow:5px 0 5px -5px  #C0C0C0;width: 200px">
+                    <a class="dropdown-toggle" href="#"  data-toggle="modal" data-target="#Add1">
+                        <span class="label label-success"><i class="fa fa-star"></i></span>&nbsp;부하 추가
+                    </a>
+                </li>-->
+
+        <li class="dropdown dropdown-big" style="box-shadow:5px 0 5px -5px  #C0C0C0;width: 200px">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="padding-top:10px; padding-bottom: 11px;"><span
+                        class="label label-default"><i class="fa fa-gears"></i></span> 에디터 설정</a>
+            <ul class="dropdown-menu">
+                <li>
+                    <!-- Using "icon-spin" class to rotate icon. -->
+                    <a href="#" ><p><span class="label label-info"><i class="fa fa-gear"></i></span> 에디터 설비 설정</p></a>
+                    <hr/>
+                    <a href="#" id="editorCategoryMenu" data-toggle="modal" data-target="#editorCategory"><p><span class="label label-warning"><i class="fa fa-gear"></i></span> 에디터 카테고리 설정</p>
+                    </a>
+                    <hr/>
+                    <a href="#" id="editorImageMenu" data-toggle="modal" data-target="#editorImage"><p><span class="label label-danger"><i class="fa fa-gear"></i></span> 에디터 이미지 템플릿 설정</p>
+                    </a>
+                    <hr/>
+                </li>
+
+                <!--
+                          <li class="dropdown dropdown-big" style="width: 150px">
+                            <a class="dropdown-toggle" href="#showList"  data-toggle="modal">
+                              <span class="label label-primary"><i class="fa fa-search-plus"></i></span>&nbsp;확대
+                            </a>
+                          </li>
+                          <li class="dropdown dropdown-big" style="width: 150px">
+                            <a class="dropdown-toggle" href="#"  data-toggle="modal" data-target="#Add2" id="algo">
+                              <span class="label label-info"><i class="fa fa-search-minus"></i></span>&nbsp;축소
+                            </a>
+                          </li>-->
+            </ul>
+        </li>
+    </ul>
+</div>

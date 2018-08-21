@@ -1,0 +1,38 @@
+<div id="hs">
+    <div id="mapFrame" style="float:left;">
+
+        <div id="map" class="map" style="height: 820px; width: 1000px; border:1px solid black; background-color: lightskyblue">
+        </div>
+        <div id="popup" class="ol-popup">
+            <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+            <div id="popup-content"></div>
+        </div>
+    </div>
+
+    <div id="optFrame" style="float:left;margin:20px;">
+        <div id="location" ></div>
+        <div id="scale"></div>
+        <label>mode : </label>
+        <select id="cfType">
+            <option value="Point">Point</option>
+            <option value="LineString">LineString</option>
+            <option value="Polygon">Polygon</option>
+            <option value="Circle">Circle</option>
+            <option value="Text">Text</option>
+            <option value="Modify">Modify</option>
+            <!--<option value="Select">Select</option>-->
+            <option value="Delete">Delete</option>
+        </select><br>
+        text : <input id="cfTextInput" type="text"><br>
+        size : <input id="cfSizeInput" type="text" value="5"><br>
+        color : <input id="cfColorInput" type="text" value="#00e5ff"><br>
+
+        <button id="removeAll">Remove All</button><br>
+        <button id="sendCfData">Send Custom Features Data</button><br>
+
+        <!--<div id="info">&nbsp;</div>-->
+        <!--<div id="nodelist">&nbsp;</div>-->
+    </div>
+
+    <script src="/library/openlayers/loader.js?id=electrical_diagram_gis_main"></script>
+</div>

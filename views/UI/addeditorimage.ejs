@@ -1,0 +1,119 @@
+<div class="modal" id="addImage">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="height: 30px; padding: 5px 15px;">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" style="font-size: 13px; color: black; padding: 0px; font-weight: bold; ">Add Editor Image</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-7">
+                     <!--   이름: <input type="text" id="filename" ><input type="submit" value="업로드" data-dismiss="modal" id="saveEditorImage" style="margin-left: 10px">
+                        <input  type="file" name="FILE_NAME" id="file" style="margin-top: 10px; margin-left: 15px;">-->
+                        <div class="fileBox">
+                            이름: <input type="text" id="filename" > <br>
+                            <input type="text" class="fileName" readonly="readonly">
+                            <label for="uploadBtn" class="btn btn-info">파일검색</label>
+                            <input type="file" id="uploadBtn" class="uploadBtn" style="display: none">
+                            <label for="saveEditorImage" class="btn btn-primary">업로드</label>
+                            <input type="submit" value="업로드" data-dismiss="modal" id="saveEditorImage" style="margin-left: 10px; display: none; ">
+                        </div>
+
+                    </div>
+                    <div class="col-md-2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var uploadFile = $('.fileBox .uploadBtn');
+    uploadFile.on('change', function(){
+        if(window.FileReader){
+            var filename = $(this)[0].files[0].name;
+        } else {
+            var filename = $(this).val().split('/').pop().split('\\').pop();
+        }
+        $(this).siblings('.fileName').val(filename);
+    });
+
+    function getFormatDate(date){
+        var year = date.getFullYear()       //yyyy
+        var month = (1 + date.getMonth());                     //M
+        month = month >= 10 ? month : '0' + month;     // month 두자리로 저장
+        var day = date.getDate();                                        //d
+        day = day >= 10 ? day : '0' + day;                            //day 두자리로 저장
+        return  year + '/' + month + '/' + day;
+    }
+
+
+    //행추가
+    function addTableTr() {
+        //최대 행개수보다 크면 리턴
+
+        var date = new Date();
+        date = getFormatDate(date);
+
+        //추가할 HTML  value=" + count + "
+        var add_cell1 = "<input type=text name=text size=3 id=countText >";
+        var add_cell2 = $("#filename").val();
+        var add_cell3 = "<img src='" + $("#file").val() + "' style='width: 30px; height: 30px;'/>"
+        var add_cell4 = "<input type=text name=text size=10 id=dateText value=" + date + ">";
+        var add_cell5 = "<button class='btn btn-xs btn-warning'><i class='fa fa-pencil'></i></button><button class='btn btn-xs btn-danger'><i class='fa fa-times'></i></button>"
+
+        //행추가할 테이블 가져오기
+        var table_name = document.getElementById("editorImageTable");
+
+        //tr만들기
+        var new_row = table_name.insertRow();
+
+        //td만들기
+        var new_cell1 = new_row.insertCell();
+        var new_cell2 = new_row.insertCell();
+        var new_cell3 = new_row.insertCell();
+        var new_cell4 = new_row.insertCell();
+        var new_cell5 = new_row.insertCell();
+
+        new_cell1.style.textAlign='center';
+        new_cell2.style.textAlign='center';
+        new_cell3.style.textAlign='center';
+        new_cell4.style.textAlign='center';
+        new_cell5.style.textAlign='center';
+
+        //td안에 넣을 HTML
+        new_cell1.innerHTML = add_cell1;
+        new_cell2.innerHTML = add_cell2;
+        new_cell3.innerHTML = add_cell3;
+        new_cell4.innerHTML = add_cell4;
+        new_cell5.innerHTML = add_cell5;
+        //행추가할때마다 행개수 +1
+        count++;
+    }
+
+    //행삭제
+/*
+    function delete_tr() {
+        //행삭제할 테이블 가져오기
+        var table = document.getElementById('editorImageTable');
+
+        //행이 하나밖에 없으면 삭제하지 않기
+        if (table.rows.length < 13){
+            alert("더이상 삭제할수 없습니다.");
+            return;
+        }
+        //tr삭제하기
+        table.deleteRow(table.rows.length - 1);
+        //삭제할때마다 행개수 -1
+        count--;
+    }
+*/
+
+    $("#saveEditorImage").on("click", function () {
+        addTableTr();
+
+    })
+
+</script>

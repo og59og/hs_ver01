@@ -1,0 +1,38 @@
+{
+  "name": "simulator-v2",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "ajax": "0.0.4",
+    "body-parser": "^1.18.3",
+    "bootstrap": "^4.1.0",
+    "bootstrap-toggle": "^2.2.2",
+    "bootstrap-treeview-npm": "^1.2.3",
+    "cookie-parser": "~1.4.3",
+    "d3": "^5.4.0",
+    "date-format": "^1.2.0",
+    "dateformat": "^3.0.3",
+    "datepicker": "0.0.0",
+    "datetimepicker": "^0.1.38",
+    "debug": "~2.6.9",
+    "ejs": "~2.5.7",
+    "ejs-locals": "^1.0.2",
+    "express": "~4.16.0",
+    "express-session": "^1.15.6",
+    "get": "^1.4.0",
+    "http-errors": "~1.6.2",
+    "jquery": "^3.3.1",
+    "morgan": "~1.9.0",
+    "paging": "^0.4.0",
+    "pg": "^7.4.1",
+    "pg-format": "^1.0.4",
+    "popper.js": "^1.14.3",
+    "promise": "^8.0.1",
+    "promise-sequential": "^1.1.1",
+    "request": "^2.85.0",
+    "require": "^2.4.20"
+  }
+}

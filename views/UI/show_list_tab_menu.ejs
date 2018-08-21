@@ -1,0 +1,97 @@
+
+<!-- The Modal -->
+<div class="modal" id="showList">
+    <div class="modal-dialog">
+        <div class="modal-content" >
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" id="exampleModalLongTitle">설비List 보기</h4>
+            </div>
+            <div class="modal-body">
+                <ul class="nav nav-tabs" id="listTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active"  id="listTabSub" data-toggle="tab"  href="#editor" role="tab" aria-controls="home" aria-selected="false">변전소</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" id="listTabMtr" data-toggle="tab" href="#editor" role="tab" aria-controls="home" aria-selected="false">주 변압기</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" id="listTabDl" data-toggle="tab" href="#editor" role="tab" aria-controls="home" aria-selected="false">배전 선로</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" id="listTabSw" data-toggle="tab" href="#editor" role="tab" aria-controls="home"aria-selected="false">스위치</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <div class="tab-pane active" id="list" role="tabpanel" aria-labelledby="list-tab">
+                        <div id="subsDiv">
+                            <table id="listTableSub" class="display" style="width:100%">
+                                <thead>
+                                <tr>
+                                    <th>subs_id</th>
+                                    <th>subs_no</th>
+                                    <th>subs_name</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div id="mtrDiv">
+                            <table id="listTableMtr"  class="display" style="width:100%">
+                                <thead>
+                                <tr>
+                                    <th>mtr_id</th>
+                                    <th>bank_no</th>
+                                    <th>subs_name</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div id="dlDiv">
+                            <table id="listTableDl"  class="display" style="width:100%">
+                                <thead>
+                                <tr>
+                                    <th>dl_id</th>
+                                    <th>dl_name</th>
+                                    <th>mtr_id</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div id="swDiv">
+                            <table id="listTableSw"  class="display" style="width:100%">
+                                <thead>
+                                <tr>
+                                    <th>sw_id</th>
+                                    <th>sw_loc</th>
+                                    <th>dl_name</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">닫기</button>
+            </div>
+        </div>
+    </div>
+</div>

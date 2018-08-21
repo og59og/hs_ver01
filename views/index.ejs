@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+
+  <!-- Title and other stuffs -->
+  <title>KEPRI X Soft Factory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+
+  <!-- openlayers -->
+  <link rel="stylesheet" href="library/openlayers/css/openlayers.css">
+
+   <!--   <link rel="stylesheet" href="library/bootstrap-4.0.0-dist/css/bootstrap.min.css">-->
+  <link rel="stylesheet" href="theme/css/bootstrap.min.css">
+
+  <!--    <link href="theme/less/namespace_bootstrap.css" rel="stylesheet">-->
+  <link rel="stylesheet" href="library/openlayers/css/gis_popup.css"/>
+  <link rel="stylesheet" href="library/bootstrap-4.0.0-dist/css/bootstrap-treeview.min.css"/>
+  <link rel="stylesheet" href="library/bootstrap-4.0.0-dist/css/bootstrap-datetimepicker.min.css"/>
+
+  <!-- Stylesheets -->
+
+  <!-- Font awesome icon -->
+  <link rel="stylesheet" href="theme/css/font-awesome.min.css">
+
+  <!-- jQuery UI -->
+  <link rel="stylesheet" href="theme/css/jquery-ui.css">
+
+  <!-- Calendar -->
+  <link rel="stylesheet" href="theme/css/fullcalendar.css">
+
+  <!-- prettyPhoto -->
+  <link rel="stylesheet" href="theme/css/prettyPhoto.css">
+
+  <!-- Star rating -->
+  <link rel="stylesheet" href="theme/css/rateit.css">
+
+  <!-- Date picker -->
+  <!--    <link rel="stylesheet" href="theme/css/bootstrap-datetimepicker.min.css">-->
+
+  <!-- CLEditor -->
+  <link rel="stylesheet" href="theme/css/jquery.cleditor.css">
+
+  <!-- Data tables -->
+  <link rel="stylesheet" href="theme/css/jquery.dataTables.css">
+
+  <!-- Bootstrap toggle -->
+  <!--<link rel="stylesheet" href="theme/css/jquery.onoff.css">-->
+
+  <!-- Main stylesheet -->
+  <link href="theme/css/style.css" rel="stylesheet">
+
+  <!-- Widgets stylesheet -->
+  <link href="theme/css/widgets.css" rel="stylesheet">
+
+    <!-- custom scrollbar -->
+  <link href="custom/scrollbar/css/custom_scrollbar.css" rel="stylesheet">
+
+
+  <!-- 여기는 버전 낮추면 통채로 주석 -->
+  <script type="text/javascript" src="/library/jquery/jquery-3.3.1.js"></script>
+  <script src="library/bootstrap-4.0.0-dist/js/popper.min.js"></script>
+  <script src="library/bootstrap-4.0.0-dist/js/bootstrap-treeview.min.js"></script>
+  <script src="library/bootstrap-4.0.0-dist/js/bootstrap-datetimepicker.min.js"></script>
+  <script src="library/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+  <!--    <script src="theme/js/bootstrap.min.js"></script>-->
+
+  <!-- JS -->
+  <!--<script src="theme/js/jquery.js"></script>--> <!-- jQuery 1.11.3-->
+  <script src="theme/js/jquery-ui.min.js"></script> <!-- jQuery UI -->
+  <script src="theme/js/moment.min.js"></script> <!-- Moment js for full calendar -->
+  <script src="theme/js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+  <script src="theme/js/jquery.rateit.min.js"></script> <!-- RateIt - Star rating -->
+  <script src="theme/js/jquery.prettyPhoto.js"></script> <!-- prettyPhoto -->
+  <script src="theme/js/jquery.slimscroll.min.js"></script> <!-- jQuery Slim Scroll -->
+  <script src="theme/js/jquery.dataTables.min.js"></script> <!-- Data tables -->
+
+  <!-- jQuery Flot -->
+  <script src="theme/js/excanvas.min.js"></script>
+  <script src="theme/js/jquery.flot.js"></script>
+  <script src="theme/js/jquery.flot.resize.js"></script>
+  <script src="theme/js/jquery.flot.pie.js"></script>
+  <script src="theme/js/jquery.flot.stack.js"></script>
+
+  <!-- jQuery Notification - Noty -->
+  <script src="theme/js/jquery.noty.js"></script> <!-- jQuery Notify -->
+  <script src="theme/js/themes/default.js"></script> <!-- jQuery Notify -->
+  <script src="theme/js/themes/bootstrap.js"></script> <!-- jQuery Notify -->
+  <script src="theme/js/layouts/bottom.js"></script> <!-- jQuery Notify -->
+  <script src="theme/js/layouts/topRight.js"></script> <!-- jQuery Notify -->
+  <script src="theme/js/layouts/top.js"></script> <!-- jQuery Notify -->
+
+  <!-- jQuery Notification ends -->
+  <script src="theme/js/sparklines.js"></script> <!-- Sparklines -->
+  <script src="theme/js/jquery.cleditor.min.js"></script> <!-- CLEditor -->
+  <!--    <script src="theme/js/bootstrap-datetimepicker.min.js"></script>--> <!-- Date picker -->
+  <!--<script src="theme/js/jquery.onoff.min.js"></script>--> <!-- Bootstrap Toggle -->
+  <script src="theme/js/filter.js"></script> <!-- Filter for support page -->
+  <script src="theme/js/custom.js"></script> <!-- Custom codes -->
+  <script src="theme/js/charts.js"></script> <!-- Charts & Graphs -->
+
+    <!-- sf_util.js -->
+    <script type="text/javascript" src="/custom/util/util.js"></script>
+
+  <!-- log content manager -->
+    <script src="/library/plotly/plotly.min.js"></script>
+    <script src="/custom/plot/pqms_plotly.js"></script>
+    <script src="/custom/plot/pv_plotly.js"></script>
+    <script src="/custom/plot/section_load_plotly.js"></script>
+  <script type="text/javascript" src="/custom/log/javascript/logContentManager.js"></script>
+  <script type="text/javascript" src="/custom/progress/javascript/progressManager.js"></script>
+    <script type="text/javascript" src="/custom/table/javascript/chartTable.js"></script>
+    <script type="text/javascript" src="/custom/algorithm/algorithm.js"></script>
+    <script type="text/javascript" src="/custom/algorithm/algorithmMain.js"></script>
+    <script type="text/javascript" src="/custom/algorithm/algorithmTabManager.js"></script>
+    <script type="text/javascript" src="/custom/section/javascript/sectionManager.js"></script>
+
+    <link rel="stylesheet" href="/custom/slider/css/slider.css">
+    <script type="text/javascript" src="/custom/slider/javascript/timeSlider.js"></script>
+
+  <!--   <script type="text/javascript" src="/library/jquery/jquery-3.3.1.js"></script>
+      <script src="library/openlayers/loader.js?id=electrical_diagram_gis_main"></script>
+      <script src="library/openlayers/loader.js?id=electrical_diagram_gis_popup"></script>
+      <script src="library/bootstrap-4.0.0-dist/js/popper.min.js"></script>
+      <script src="library/bootstrap-4.0.0-dist/js/bootstrap-treeview.min.js"></script>
+      <script src="library/bootstrap-4.0.0-dist/js/bootstrap-datetimepicker.min.js"></script>
+      <script src="library/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>-->
+
+  <script src="library/d3/js/d3.min.js"></script>
+  <script src="library/openlayers/build/ol.js"></script>
+  <script src="library/openlayers/electrical_diagram_gis_main.js"></script>
+  <script src="library/openlayers/electrical_diagram_gis_popup.js"></script>
+
+  <!--    <script type="text/javascript" src="/library/openlayers/build/ol.js"></script>
+      <script src="library/openlayers/electrical_diagram_gis_main.js"></script>
+      <script src="library/openlayers/electrical_diagram_gis_popup.js"></script>-->
+  <!-- bootstrap  toggle library -->
+
+  <link href="/toggle/bootstrap-toggle.min.css" rel="stylesheet">
+  <script src="/toggles/bootstrap-toggle.min.js"></script>
+
+
+
+  <!-- custom datatables library -->
+  <script type="text/javascript" src="template/javascripts/custom_datatables.js"></script>
+
+  <!-- mxGraph library -->
+  <link rel='stylesheet' href='/library/mxgraph/css/style.css'/>
+  <script type="text/javascript">
+      mxBasePath = '/library/mxgraph/javascript/src';
+  </script>
+  <script type="text/javascript" src="/library/mxgraph/javascript/mxClient.js"></script>
+
+  <!-- hash map -->
+  <script type="text/javascript" src="/library/mxgraph/javascript/hashMap.js"></script>
+
+  <!-- custom - 소희 library -->
+  <!-- <link rel="stylesheet" href="template/css/basic.css"/>
+   <link rel="stylesheet" href="template/css/comm.css"/>-->
+
+  <script type="text/javascript" src="template/javascripts/Main.js"></script>
+
+  <!-- custom 주희 library -->
+  <script type="text/javascript" src="/library/mxgraph/javascript/FileSaver.js"></script>
+  <script type="text/javascript" src="/library/mxgraph/javascript/oneDiagram.js"></script>
+  <script type="text/javascript" src="/library/mxgraph/javascript/symbolStyle.js"></script>
+  <script type="text/javascript" src="/library/mxgraph/javascript/simulator.js"></script>
+
+
+
+
+  <!-- Script for this page -->
+  <script type="text/javascript">
+  </script>
+  <script src="theme/js/respond.min.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="theme/js/html5shiv.js"></script>
+
+  <![endif]-->
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="theme/img/favicon/favicon.png">
+</head>
+
+<body style="padding-right: 0px; padding-left: 0px; padding-bottom: 0px; padding-top: 39px; ">
+
+<div class="navbar navbar-fixed-top bs-docs-nav" role="banner" style="height: 40px;">
+
+    <div class="conjtainer">
+
+      <div class="row">
+        <div class="col-md-2">
+      <!-- Menu button for smallar screens -->
+      <div class="navbar-header">
+		  <button class="navbar-toggle btn-navbar" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+			<span>Menu</span>
+		  </button>
+		  <!-- Site name for smallar screens -->
+        <p ><img src="template/images/logo_gray.png" alt="로고" style="width: 180px; height: 30px; padding-left: 7px; padding-top: 7px;" /><span class="project-logo"   style="text-align: center";></span></p>
+		</div>
+        </div>
+
+     <div class="col-md-8" style="height: 40px;">
+         <%include ../views/UI/header.ejs%>
+     </div>
+
+       <div class="col-md-2" style="height: 40px;">
+        <!-- Links -->
+        <ul class="nav navbar-nav pull-right">
+          <li class="dropdown pull-right">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#" style="padding-top: 10px; padding-bottom: 10px;">
+              <i class="fa fa-user"></i><%= user_name%> 님<b class="caret"></b>
+            </a>
+
+
+            <!-- Dropdown menu -->
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-toggle" href="#"  data-toggle="modal" data-target="#userProfile" id ="userInfo"><i class="fa fa-user"></i> Profile</a></li>
+              <li><a href="#"><i class="fa fa-cogs"></i> Settings</a></li>
+              <li><a href="users/logoff"><i class="fa fa-sign-out"></i> Logout</a></li>
+            </ul>
+          </li>
+
+
+
+
+        </ul>
+          <!-- Search form -->
+        <!--  <form class="navbar-form navbar-right" role="search">
+              <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Search">
+              </div>
+          </form>-->
+      </nav>
+
+    </div>
+  </div>
+      </div>
+    </div>
+
+
+<!-- Main content starts -->
+
+<div class="content" style="height: 100%">
+
+<div class="sidebar" id="showListTree" style="padding-right: 5px; padding-left: 5px;">
+  <div class="widget">
+    <div class="widget-head " style="height: 30px; padding: 5px 15px;">설비 List</div>
+
+    <div class="widget-content" id="showListDiv" style="width:100%; overflow-y: auto;" >
+    </div>
+  </div>
+
+</div>
+
+    <div class="sidebar" id="showSimulatorObj" style="padding-right: 5px; padding-left: 5px;" >
+
+        <div class="widget">
+            <div class="widget-head " style="height: 30px; padding: 5px 15px;">에디터</div>
+
+            <div class="widget-content" id="showAddObj">
+                <%include electrical_diagram/simulationEditorMenu.ejs %>
+            </div>
+        </div>
+    </div>
+
+
+  <!-- Main bar -->
+  	<div class="mainbar" style="height: 100%">
+
+	    <!-- Page heading ends -->
+
+
+
+	    <!-- Matter -->
+
+	    <div class="matter">
+
+        <div class="container">
+
+          <!-- Today status. jQuery Sparkline plugin used. -->
+
+          <!-- Dashboard Graph starts -->
+
+          <div class="row">
+            <div class="col-md-10">
+
+              <!-- Widget -->
+              <div class="widget">
+                <!-- Widget head -->
+                <div class="widget-head wiget-head-height" style="padding: 5px 15px;">
+                    <div class="pull-left" id="main_head_title"> <b>GIS</b> / 단선도</div>
+   <!--                 <input type="button" class="btn btn-success" id="tttt" value="tttt"/>-->
+                    <div class="widget-icons pull-right">
+                        <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a>
+                        <!--<a href="#" class="wclose"><i class="fa fa-times"></i></a>-->
+                    </div>
+                    <div class="pull-right"><label>설정 시간 :&nbsp;</label><label id="global_setting_time">2018-01-30 00:00</label></div>
+                    <div class="widget-icons pull-right">
+                        <a class="click-pick" id="algoTimeSetClickPick"><i class="fa fa-calendar-times-o" style="font-size:15px; font-weight: bold; color:#598bff;"></i>&nbsp;</a>
+                    </div>
+                  <div class="clearfix"></div>
+                </div>
+                <!-- Widget content -->
+                <div class="widget-content">
+                  <div class="padd" style="height: 770px; padding: 5px; padding-right: 6px; padding-left: 6px; padding-bottom: 2px; padding-top: 2px;" >
+                    <h3 class="pull-left select-system" id ="selectObjectInfo" style="font-size: 13px; padding-top: 5px; font-weight:normal;"></h3>
+                    <div class="pull-right">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-basic"  data-toggle="tooltip" data-placement="bottom" title="초기화" id="refresh" style="display: none; width: 60px; height: 35px;margin: 3px"><span class="glyphicon glyphicon-refresh"></span></button>
+                            <button type="button" class="btn btn-basic"  data-toggle="tooltip" data-placement="bottom" title="돌아가기" id="return" style="display: none; width: 60px; height: 35px;margin: 3px"><span class="glyphicon glyphicon-arrow-left"></span></button>
+                            <button type="button" class="btn btn-basic"  data-toggle="tooltip" data-placement="bottom" title="확대" id="plusBtn" style="display: none; width: 60px; height: 35px;margin: 3px"><span class="glyphicon glyphicon-plus"></span></button>
+                            <button type="button" class="btn btn-basic"  data-toggle="tooltip" data-placement="bottom" title="축소"  id="minusBtn" style="display: none;width: 60px; height: 35px;margin: 3px"><span class="glyphicon glyphicon-minus"></span></button>
+                            <button type="button" class="btn btn-primary" id="gis" style="width: 60px; height: 35px;margin: 3px">GIS</button>
+                            <button type="button" class="btn btn-default" id="oneLineDiagram" style="width: 60px; height: 35px; margin: 3px" >단선도</button>
+                        </div>
+
+
+                        <div class="btn-group" id="diagram_submenu">
+                            <input type="checkbox" id="modeChange" data-toggle="toggle" data-on="시뮬레이션" data-onstyle="danger" data-offstyle="primary" data-off="단선도"  style="visibility: hidden;" disabled >
+                        </div>
+                        <div class="btn-group" id="gis_diagram_submenu">
+                            <input type="checkbox" id="gisMoveModeChange" data-toggle="toggle" data-on="확대/축소" data-off="단선도 이동" data-onstyle="danger" data-offstyle="primary" style="visibility: hidden;" disabled >
+                        </div>
+                            <div class="dropdown">
+                            <button class="btn btn-info dropbtn">범례</button>
+                            <div class="dropdown-content" style="height: auto;">
+                                <%include UI/legend.ejs%>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="hidden" id="displayModeValue">
+
+                    <div id="display" style="overflow-y: auto; overflow-x: auto;  width: 100%; height: 690px;  background-color: #ebeff9;" >
+                      <div id="displayGis">
+                          <%include ../views/electrical_diagram_gis/gis_main.ejs %>
+                      </div>
+                      <div id ="displayBackground" style="width:100%; height: 100%; background:black; ">
+                          <%include ../views/electrical_diagram/one_diagram.ejs%>
+                      </div>
+                    </div>
+                    <div class="row" style="padding-right: 10px; height: 38px;">
+                        <div class="col-md-6" style="height: 35px; padding-left: 20px;">
+                            <div id="timeSlider" class="slider-custom sf-data-slider sf-slider-tooltip"  style="margin-top: 15px; display: none;">
+                                <span class="sf-slider-tooltiptext">Tooltip text</span>
+                                <div class="slider-left"></div>
+                                <div class="slider-right"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-basic" data-toggle="tooltip" data-placement="bottom" title="시작점" id="slider-backward" style="display: none;width: 60px; height: 35px;margin: 0px"><span class="glyphicon glyphicon-backward"></span></button>
+                                <button type="button" class="btn btn-basic" data-toggle="tooltip" data-placement="bottom" title="재생" id="slider-play" data="play" style="display: none;width: 60px; height: 35px;margin: 0px"><span class="glyphicon glyphicon-play"></span></button>
+                                <button type="button" class="btn btn-basic" data-toggle="tooltip" data-placement="bottom" title="정지" id="slider-stop" style="display: none;width: 60px; height: 35px;margin: 0px"><span class="glyphicon glyphicon-stop"></span></button>
+                                <button type="button" class="btn btn-basic" data-toggle="tooltip" data-placement="bottom" title="현재시점" id="slider-current" style="display: none;width: 60px; height: 35px;margin: 0px"><span class="glyphicon glyphicon-registration-mark"></span></button>
+                                <button type="button" class="btn btn-basic" data-toggle="tooltip" data-placement="bottom" title="끝점" id="slider-forward" style="display: none;width: 60px; height: 35px;margin: 0px"><span class="glyphicon glyphicon-forward"></span></button>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="pull-right btn-group algo-tab-btn-group" id="algo_result_show_btn_group">
+                                <!--<input type="button" value="asdsad" id="loading_modal_test_btn">-->
+                            </div>
+                        </div>
+
+                    </div>
+
+                  </div>
+                </div>
+                <!-- Widget ends -->
+
+              </div>
+            </div>
+
+            <div class="col-md-2" style="padding-left: 0px;">
+
+              <div class="widget" style="margin-bottom: 0px;">
+
+                <div class="widget-head wiget-head-height" style="padding: 5px 15px;">
+                  <div class="pull-left">상태 정보</div>
+
+                  <div class="widget-icons pull-right">
+                    <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a>
+                   <!-- <a href="#" class="wclose"><i class="fa fa-times"></i></a>-->
+                  </div>
+                </div>
+
+                <div class="widget-content">
+                  <div class="padd" style="height: 770px; padding-top: 6px;padding-right: 6px;padding-bottom: 6px;padding-left: 6px;">
+                  <!--include ../views/electrical_diagram/mxgraphInfoModal.ejs -->
+                  <%include ../views/electrical_diagram_gis/gis_subs_main_popup.ejs%>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+          <!-- Dashboard graph ends -->
+
+          <!-- Chats, File upload and Recent Comments -->
+          <div class="row">
+
+            <div class="col-md-6" style="padding-top: 0px; padding-right: 0px;">
+              <!-- Widget -->
+              <div class="widget">
+                <!-- Widget title -->
+                <div class="widget-head wiget-head-height" style="padding: 5px 15px;">
+                  <div class="pull-left">요청 현황 로그</div>
+                  <div class="widget-icons pull-right">
+                    <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a>
+                 <!--   <a href="#" class="wclose"><i class="fa fa-times"></i></a>-->
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+
+                <div class="widget-content sf-bottom-wiget-style">
+
+                    <!-- Widget content -->
+                    <ul class="file-upload" id="req_progress" >
+
+<!--                        <li>
+                            <strong><i class="fa fa-upload"></i> File_Name_Here.Mp3 - 3.3 of 5MB - 5 mins - 1MB/Sec</strong>
+                            <div class="progress progress-animated progress-striped">
+                                <div class="progress-bar progress-bar-success" data-percentage="100">
+                                    <span class="sr-only">100 % completed</span>
+                                </div>
+                            </div>
+                        </li>-->
+                    </ul>
+                </div>
+
+
+              </div>
+            </div>
+            <div class="col-md-6">
+              <!-- Widget -->
+              <div class="widget" >
+                <!-- Widget title -->
+                <div class="widget-head wiget-head-height" style="padding: 5px 15px;">
+                  <div class="pull-left">기록</div>
+                  <div class="widget-icons pull-right">
+                    <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a>
+                    <!--<a href="#" class="wclose"><i class="fa fa-times"></i></a>-->
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="widget-content sf-bottom-wiget-style">
+                  <!-- Widget content -->
+                    <div class="padd" style="padding-left: 3px;padding-right: 3px; padding-top: 4px; padding-bottom: 0px;" >
+                        <div class="error-log" style="height: 15%">
+                            <ul id="logContentUl">
+                                <!-- Use class "green" or "red" to add color -->
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+		  </div>
+
+		<!-- Matter ends -->
+
+    </div>
+
+   <!-- Mainbar ends -->
+   <div class="clearfix"></div>
+
+</div>
+<!-- Content ends -->
+
+<!-- session hidden -->
+<input type="hidden" id="hidden_subs_id" value="<%= subs_id %>"/>
+<input type="hidden" id="hidden_subs_no" value="<%= subs_no %>"/>
+
+
+
+<!-- Footer starts -->
+<!--<footer class="fixed-bottom">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+            &lt;!&ndash; Copyright info &ndash;&gt;
+            <p class="copy">KEPRI X Soft Factory</p>
+      </div>
+    </div>
+  </div>
+</footer>-->
+
+<!-- Footer ends -->
+
+<!-- Scroll to top -->
+
+<%include algo_popup/algo_pv_setting_popup.ejs%>
+<%include algo_popup/gis_pqms_popup.ejs%>
+<%include electrical_diagram/simulatorAddObjInfoModal.ejs%>
+<%include UI/editor_Image.ejs%>
+<%include UI/editor_category.ejs%>
+<%include UI/addeditorimage.ejs%>
+<%include UI/user_info.ejs%>
+<%include UI/layer_menu.ejs%>
+<%include UI/value_menu.ejs%>
+<%include UI/object_menu.ejs%>
+<%include UI/setting_menu.ejs%>
+<%include UI/add_load_menu.ejs%>
+<%include UI/algorithm_menu.ejs%>
+<%include UI/show_list_tab_menu.ejs%>
+<%include algo_popup/pqms_popup_modal.ejs%>
+<%include algo_popup/pv_popup_modal.ejs%>
+<%include algo_popup/algo_info_modal.ejs%>
+<%include algo_popup/section_load_popup_modal.ejs%>
+<%include algo_popup/algo_sec_load_setting_popup.ejs%>
+<%include UI/loading_modal.ejs%>
+
+</body>
+</html>

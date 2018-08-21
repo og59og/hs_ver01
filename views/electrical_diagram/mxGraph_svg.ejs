@@ -1,0 +1,85 @@
+<html>
+<head>
+    <title>Animation example for mxGraph</title>
+
+    <script type="text/javascript">
+        mxBasePath = '/library/mxgraph/javascript/src';
+    </script>
+
+    <script type="text/javascript" src="/library/mxgraph/javascript/mxClient.js"></script>
+
+    <style type="text/css">
+        .flow {
+            stroke-dasharray: 8;
+            animation-name: dash;
+            animation-duration: 0.5s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        @keyframes dash {
+            to {
+                stroke-dashoffset: -16;
+            }
+        }
+    </style>
+
+    <!-- Example code -->
+    <script type="text/javascript">
+        var arr = [];
+        function main(container) {
+            var graph = new mxGraph(container);
+            graph.panningHandler.useLeftButtonForPanning = true;
+            graph.panningHandler.ignoreCell = true;
+
+
+            graph.container.style.cursor = "pointer";
+            graph.setPanning(true);
+            graph.setEnabled(false);
+            mxEvent.PAN_START
+            var parent = graph.getDefaultParent();
+
+            var vertexStyle = 'shape=cylinder;strokeWidth=2;fillColor=#ffffff;strokeColor=black;' +
+                'gradientColor=#a0a0a0;fontColor=black;fontStyle=1;spacingTop=14;';
+
+            graph.getModel().beginUpdate();
+            try {
+
+                var testArr = [];
+
+                var v = graph.insertVertex(parent, null, 'Pump', 20, 50, 60, 60);
+
+                var v1 = graph.insertVertex(parent, null, 'Pump', 150, 20, 60, 60);
+                testArr.push(v1);
+                var v2 = graph.insertVertex(parent, null, 'Pump', 150, 80, 60, 60);
+                testArr.push(v2);
+                var v3 = graph.insertVertex(parent, null, 'Pump', 210, 20, 60, 60);
+                testArr.push(v3);
+                var v4 = graph.insertVertex(parent, null, 'Pump', 210, 80, 60, 60);
+                testArr.push(v4);
+
+                var group = graph.groupCells(null, 2, testArr);
+
+                var v5 = graph.insertVertex(parent, null, 'Pump', 350, 50, 60, 60);
+                // var sec = mxGraphDiagram.graph.insertEdge(parent, line.secId, null, line.mxFront, line.mxBack, "lineStyle");
+                graph.insertEdge(parent, "line", null, group, v5, null);
+                graph.insertEdge(parent, "line", null, v, group, null);
+            }
+            finally {
+                // Updates the display
+                graph.getModel().endUpdate();
+            }
+
+
+        };
+    </script>
+</head>
+
+<!-- Page passes the container for the graph to the program -->
+<body onload="main(document.getElementById('graphContainer'))">
+
+<!-- Creates a container for the graph with a grid wallpaper -->
+<div id="graphContainer"
+     style="position:relative;overflow:hidden;cursor:default;background-color: black">
+</div>
+</body>
+</html>

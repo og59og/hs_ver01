@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="UTF-8">
+<head>
+    <meta charset="utf-8"/>
+    <title>KEPRI_simulator</title>
+
+
+    <!-- bootstrap library 4.0 -->
+
+    <link rel="stylesheet" href="library/openlayers/css/openlayers.css">
+    <link rel="stylesheet" href="library/bootstrap-4.0.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="library/openlayers/css/gis_popup.css"/>
+    <link rel="stylesheet" href="library/bootstrap-4.0.0-dist/css/bootstrap-treeview.min.css"/>
+    <link rel="stylesheet" href="library/bootstrap-4.0.0-dist/css/bootstrap-datetimepicker.min.css"/>
+
+    <!-- jquery library -->
+    <!--<script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>-->
+    <script type="text/javascript" src="/library/jquery/jquery-3.3.1.js"></script>
+
+    <script src="library/openlayers/loader.js?id=electrical_diagram_gis_main"></script>
+    <script src="library/openlayers/loader.js?id=electrical_diagram_gis_popup"></script>
+    <script src="library/bootstrap-4.0.0-dist/js/popper.min.js"></script>
+    <script src="library/bootstrap-4.0.0-dist/js/bootstrap-treeview.min.js"></script>
+    <script src="library/bootstrap-4.0.0-dist/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="library/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+    <script src="library/d3/js/d3.min.js"></script>
+
+    <!-- bootstrap  toggle library -->
+    <link href="/toggle/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="/toggles/bootstrap-toggle.min.js"></script>
+
+
+    <!-- datatableslibrary 18.05.15 추가 -->
+    <link rel="stylesheet" type="text/css" href="library/Datatables/datatables.css"/>
+    <script type="text/javascript" charset="utf8" src="library/Datatables/datatables.js"></script>
+
+    <!-- custom datatables library -->
+    <script type="text/javascript" src="template/javascripts/custom_datatables.js"></script>
+
+
+
+    <!-- mxGraph library -->
+    <link rel='stylesheet' href='/library/mxgraph/css/style.css'/>
+    <script type="text/javascript">
+        mxBasePath = '/library/mxgraph/javascript/src';
+    </script>
+    <script type="text/javascript" src="/library/mxgraph/javascript/mxClient.js"></script>
+
+
+
+
+    <!-- hash map -->
+    <script type="text/javascript" src="/library/mxgraph/javascript/hashMap.js"></script>
+
+    <!-- custom - 소희 library -->
+    <link rel="stylesheet" href="template/css/basic.css"/>
+    <link rel="stylesheet" href="template/css/comm.css"/>
+    <script type="text/javascript" src="template/javascripts/Main.js"></script>
+
+    <!-- custom 주희 library -->
+    <script type="text/javascript" src="/library/mxgraph/javascript/FileSaver.js"></script>
+    <script type="text/javascript" src="/library/mxgraph/javascript/oneDiagram.js"></script>
+    <script type="text/javascript" src="/library/mxgraph/javascript/symbolStyle.js"></script>
+    <script type="text/javascript" src="/library/mxgraph/javascript/simulator.js"></script>
+<!--    <link rel='stylesheet' href='https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css'/>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>-->
+
+    <!-- custom 효선 library
+    <script type="text/javascript" src="/library/openlayers/javascript/electrical_diagram_gis_main.js"></script>
+-->
+
+
+
+
+</head>
+<body>
+<div id="warp">
+    <header>
+        <% include ../UI/header.ejs%>
+    </header>
+    <div id="content">
+        <div class="clearfix">
+            <div class="page-title-box" style="background-color:#f2f2f2">
+                <h3 class="page-title" >SIMULATOR</h3>
+                <span class="site-map"><a href="">HOME</a></span>
+            </div>
+
+            <article>
+                <div class="panel-default">
+                    <div class="clearfix">
+                        <h3 class="section-title" id ="test_01">단선도</h3>
+                        <h3 class="section-title" id ="test_02">시뮬레이션</h3>
+
+                        <div class="pull-right top-nav">
+                          <!--  <div class="togglesss">
+                                <input type="checkbox" id="modeChange" data-toggle="toggle" data-on="시뮬레이터" data-off="단선도">
+                            </div>-->
+                            <label class="switch">
+                                <input type="checkbox" id="modeChange" >
+                                <span class="slider" id="sliderMode">
+                                    <p class="modeChangeToggle_01" id="mode_01"  >단선도</p>
+                                    <p class="modeChangeToggle_02" id="mode_02" >시뮬레이션</p>
+                                </span>
+                            </label>
+                        </div>
+
+
+                        <button type="button" class="btn" id="gis" style="width: 60px; height: 35px;margin: 3px">GIS</button>
+                        <button type="button" class="btn" id="dan" style="width: 60px; height: 35px; margin: 3px" >단선도</button>
+                        <input type="hidden" id="displayModeValue">
+
+                        <div class="pull-right top-nav">
+                            <%include ../UI/right_icon_menu.ejs%>
+                        </div>
+
+                        <%include ../electrical_diagram_gis/gis_subs_main_popup.ejs%>
+                        <%include ../electrical_diagram_gis/gis_algorithm_popup.ejs%>
+                        <%include ../algo_popup/gis_pqms_popup.ejs%>
+                        <%include ../electrical_diagram_gis/gis_progress_bar_modal.ejs%>
+                        <%include ../UI/layer_menu.ejs%>
+                        <%include ../UI/value_menu.ejs%>
+                        <%include ../UI/object_menu.ejs%>
+                        <%include ../UI/setting_menu.ejs%>
+                        <%include ../UI/add_load_menu.ejs%>
+                        <%include ../UI/algorithm_menu.ejs%>
+                        <%include ../UI/show_list_tab_menu.ejs%>
+
+                        <div id="display" class="layer-color" >
+                            <div>
+                                <%include ../electrical_diagram_gis/gis_main.ejs %>
+                            </div>
+                            <div id ="displayBackground" style="width:100%; height: 100%; background-color:black ">
+                                <%include ../electrical_diagram/one_diagram.ejs%>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </article>
+</div>
+
+
+            <footer>
+                <p>KEPRI X Soft Factory</p>
+            </footer>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+

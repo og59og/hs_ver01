@@ -1,0 +1,88 @@
+#timeSlider label {
+    position: absolute;
+    width: 20px;
+    margin-left: -10px;
+    text-align: center;
+    margin-top: 7px;
+    font-size: 8px;
+}
+
+/* below is not necessary, just for style */
+
+#timeSlider {
+    margin: 2em auto;
+}
+
+.ui-slider-tick-mark{
+    display:inline-block;
+    width:2px;
+    background:black;
+    height:20px;
+    position:absolute;
+    top: -8px;
+    z-index: 1000;
+
+}
+.sf-data-slider {
+    margin-top : 16px;
+    margin-left: 23px;
+    z-index: 1001;
+}
+
+.slider-custom .ui-widget-header{
+    background: transparent;
+    border-color: transparent;
+    display:inline-block;
+}
+
+.slider-left {
+    position:absolute;
+    background: #36a5c6 !important;
+    border-color: #36a5c6 !important;
+    height: 100%;
+}
+.slider-right {
+    position:absolute;
+    background: #44c636 !important;
+    border-color: #44c636 !important;
+    height: 100%;
+}
+
+.sf-slider-tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.sf-slider-tooltip .sf-slider-tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 350%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.sf-slider-tooltip .sf-slider-tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.sf-slider-tooltip:hover .sf-slider-tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}

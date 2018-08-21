@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>index_page</title>
+    <link rel="stylesheet" href="/theme/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/library/bootstrap-4.0.0-dist/css/bootstrap.min.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/library/util/ajax_util.js"></script>
+
+    <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+    <link href="/theme/css/style.css" rel="stylesheet">
+    <script src="/theme/js/jquery.js"></script>
+
+    <script src="/library/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+<div class="admin-form">
+    <div class="container">
+        <div class="center"><img src="template/images/logo_gray2.png" style="width:100px; height: 80px;"/></div>
+    </div>
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Widget starts -->
+                <div class="widget worange">
+                    <!-- Widget head -->
+                    <div class="widget-head">
+                        <i class="fa fa-lock"></i> 로그인 (SF 시뮬레이터)
+                    </div>
+
+                    <div class="widget-content">
+                        <div class="padd">
+                            <!-- Login form -->
+                            <form class="form-horizontal">
+                                <!-- Email -->
+                                <div class="form-group">
+                                    <label class="control-label col-lg-3" for="Id">아이디</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" class="form-control" id="inputId" placeholder="아이디">
+                                    </div>
+                                </div>
+                                <!-- Password -->
+                                <div class="form-group">
+                                    <label class="control-label col-lg-3" for="inputPassword">비밀번호</label>
+                                    <div class="col-lg-9">
+                                        <input type="password" class="form-control" id="inputPw" placeholder="비밀번호">
+                                    </div>
+                                </div>
+                                <!-- Remember me checkbox and sign in button -->
+                                <div class="form-group">
+                                    <div class="col-lg-9 col-lg-offset-3">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> 로그인 정보 기억하기
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 col-lg-offset-6">
+                                    <button type="button" class="btn btn-info btn-sm" id="reqLogin"
+                                            style="width: 100px; height: 30px; font-size: 12px">로그인
+                                    </button>
+                                    <button type="button" class="btn btn-default btn-sm" id="reqJoin"
+                                            style="width: 100px; height: 30px; font-size: 12px">회원가입
+                                    </button>
+                                </div>
+                                <br/>
+                            </form>
+
+                        </div>
+                    </div>
+
+                    <div class="widget-foot">
+                        <p style="padding: 2px; text-align: center">KEPRI X Soft Factory</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+</div>
+
+</body>
+
+<% include ../user/join.ejs %>
+
+<script type="application/javascript">
+
+    $(function () {
+        $("#reqLogin").on("click", function () {
+            var data = {
+                id: $("#inputId").val(),
+                pw: $("#inputPw").val()
+            }
+
+            $.ajax({
+                url: "/users/login",
+                type: "POST",
+                dataType: 'json',
+                data: data,
+                success: function (result) {
+                    console.log(result);
+                    if (result.result == true) {
+                        location.href = "/";
+                    } else {
+                        alert("login fail");
+                    }
+
+                }
+
+            })
+        })
+
+        $("#reqJoin").on("click", function () {
+            // 회원가입 클릭 시 변전소 목록을 받아와 selectBox option에 넣고 modal 띄움
+            $.post("/users/joinSubsList", function (result) {
+                $("<option style='font-size: 13px;' value=''>근무 중인 변전소를 선택하세요.</option>").appendTo("#userJoinSubs");
+                for (var i = 0; i < result.length; i++) {
+                    $('<option style="font-size: 13px;" value="' + result[i].subs_id + '">' + result[i].subs_name + '</option>').appendTo("#userJoinSubs");
+                }
+                $("#userJoin").modal("show");
+            })
+        });
+
+        $("#userJoin").on('hidden.bs.modal', function () {
+            $("#userJoinId").val("");
+            $("#userJoinPw").val("");
+            $("#userJoinName").val("");
+            $("#userJoinOrg").val("");
+            $("#userJoinSubs").empty();
+        });
+        $("#userJoinReqBtn").on("click", function () {
+
+            if(!$("#userJoinId").val()){
+                alert("아이디를 입력하세요.");
+            }else if(!$("#userJoinPw").val()){
+                alert("비밀번호를 입력하세요.");
+            }else if(! $("#userJoinName").val()){
+                alert("이름을 입력하세요.");
+            }else if(!$("#userJoinOrg").val()){
+                alert("소속을 입력하세요.");
+            }else if(!$("#userJoinSubs option:selected").val()){
+                alert("근무지를 선택하세요.");
+            }else{
+                //차후 value 확인 해야함
+                console.log($("#userJoinSubs option:selected").val());
+                console.log($("#userJoinSubs option:selected").text());
+                const param = {
+                    id: $("#userJoinId").val(),
+                    password: $("#userJoinPw").val(),
+                    name: $("#userJoinName").val(),
+                    organization: $("#userJoinOrg").val(),
+                    subs_id: $("#userJoinSubs option:selected").val()
+                }
+                $.ajax({
+                    url: "/users/join",
+                    type: "POST",
+                    data: param,
+                    success: function (result) {
+                        if (result.result == true) {
+                            alert("회원가입 실패");
+                        } else {
+                            alert("회원가입 성공");
+                            $("#userJoin").modal("hide");
+
+                        }
+                    }
+                })
+            }
+        });
+
+        $("#inputPw").keyup(function(event) {
+            if (event.keyCode === 13) {
+                $("#reqLogin").click();
+            }
+        });
+    })
+
+</script>
+
+</html>
+
+
+

@@ -1,0 +1,71 @@
+<div class="modal modal-popup modeless-popup" id="addObjInfoModal" style=" padding-top: 0px; width: 400px;">
+    <div class="modal-dialog modal-popup-dialog" style="width: 400px;">
+        <div class="modal-content">
+            <div class="modal-header" style="height: 30px; padding: 5px 15px;">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" style="font-size: 13px; color: black; padding: 0px; font-weight: bold;">추가 Object 속성 설정</h4>
+            </div>
+            <div class="modal-body" style=" padding-top: 0px;">
+                <div class="table-responsive">
+                    <form id="addObjInfoForm">
+                        <table class="table" id="addObjTable">
+                            <tbody>
+                            <tr>
+                                <th scope="row" style="border-top: hidden;">아이디</th>
+                                <td style="border-top: hidden;">
+                                    <input type="text" class="form-control form-control-sm" id="addObjId">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">이름</th>
+                                <td><input type="text" class="form-control form-control-sm" id="addObjLoc"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">종류</th>
+                                <td id="addObjKind"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">DL</th>
+                                <td id="addObjDlId"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">MTR</th>
+                                <td id="addObjMtrId"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Substation</th>
+                                <td id="addObjSubsName"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">연결 정보(앞)</th>
+                                <td><input type="text" class="form-control form-control-sm" id="addObjFrontSwId">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">연결 정보(뒤)</th>
+                                <td><input type="text" class="form-control form-control-sm" id="addObjBackSwId">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">선로 길이(앞)</th>
+                                <td><input type="text" class="form-control form-control-sm" id="addObjFrontSecLength">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">선로 길이(뒤)</th>
+                                <td><input type="text" class="form-control form-control-sm" id="addObjBackSecLength">
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <p class="text-danger" id="checkAddInfo">
+                    </form>
+                    <div class="pull-right">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" id="addObjSubmit">추가</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" id="addObjCancel">취소</button>
+                    </div>
+                </div>  <!--table-responsive-->
+            </div>  <!--modal-body-->
+        </div>  <!--modal-content-->
+    </div>  <!--modal-dialog modal-popup-dialog-->
+</div>  <!--modal modal-popup modeless-popup-->

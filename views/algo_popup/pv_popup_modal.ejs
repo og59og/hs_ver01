@@ -1,0 +1,47 @@
+<div id="pv_popup_modal" class="modal modal-popup modeless-popup" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-popup-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="height: 30px;">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" style="font-size: 13px; color: black; padding: 0px; font-weight: bold;">PV 알고리즘 그래프</h4>
+            </div>
+            <div class="modal-body">
+                <div id="pv_plot">
+
+                </div>
+                <div id="pqms_algo_info_table" style="margin-top: 23px;">
+                    <table class="table table-striped tablem-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th style="width: 50%; text-align: center;">알고리즘 이름</th>
+                            <th style="width: 10%;">버전</th>
+                            <th style="width: 20%;">학습 알고리즘</th>
+                            <th style="width: 20%;">테스트 셋 결과</th>
+                        </tr>
+                        </thead>
+                        <tbody id="pvAlgoInfoTableBody">
+                        <tr>
+                            <td id="pvAlgoInfoNameTd">PV 발전량 예측 알고리즘</td>
+                            <td id="pvAlgoInfoVersionTd">0.2v</td>
+                            <td id="pvAlgoInfoMachine_learning_kindTd">LSTM</td>
+                            <td id="pvAlgoInfoAccuracyTd">67.81%</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="pv_table">
+                    <table class="table table-striped tablem-bordered table-hover" id="pvDataTableDiv">
+                        <tbody id="pvDataTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- <div class="modal-footer">
+                 <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+             </div>-->
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

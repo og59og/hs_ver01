@@ -1,0 +1,89 @@
+<div class="modal" id="editorCategory">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="height: 30px; padding: 5px 15px;">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" style="font-size: 13px; color: black; padding: 0px; font-weight: bold; ">Editor Category</h4>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th style="text-align: center; width: 60px ">#</th>
+                            <th style="text-align: center">이름</th>
+                            <th style="text-align: center">등록일</th>
+                            <th class="value_menu_th_activation">변경</th>
+                        </tr>
+                        </thead>
+                        <tbody id="editorCategoryTable">
+
+                        </tbody>
+                    </table>
+
+                    <div class="pull-right" style="padding-top: 20px;">
+                        <button type="button" onclick="add_tr()" class="btn btn-info" id="addeditor" >추가 </button>
+                        <button type="button" class="btn btn-primary" id="editorSave" >저장 </button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" >닫기 </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function getFormatDate(date){
+        var year = date.getFullYear()       //yyyy
+        var month = (1 + date.getMonth());                     //M
+        month = month >= 10 ? month : '0' + month;     // month 두자리로 저장
+        var day = date.getDate();                                        //d
+        day = day >= 10 ? day : '0' + day;                            //day 두자리로 저장
+        return  year + '/' + month + '/' + day;
+    }
+
+    //행추가
+    function add_tr() {
+        //최대 행개수보다 크면 리턴
+
+        var date = new Date();
+        date = getFormatDate(date);
+
+        //추가할 HTML  value=" + count + "
+        var add_cell0 = "added";
+        var add_cell1 = "<input type=text name=text size=2 id=countText >";
+        var add_cell2 = "<input type=text name=text" + " id=nameText" + " size=15>";
+        var add_cell3 = "<input type=text name=text size=15 id=dateText value=" + date + ">";
+        var add_cell4 = "<button class='btn btn-xs btn-warning'><i class='fa fa-pencil'></i></button><button class='btn btn-xs btn-danger' id='deleteeditor'><i class='fa fa-times'></i></button>"
+
+        //행추가할 테이블 가져오기
+        var table_name = document.getElementById("editorCategoryTable");
+
+        //tr만들기
+        var new_row = table_name.insertRow();
+
+        //td만들기
+        var new_cell0 = new_row.insertCell();
+        var new_cell1 = new_row.insertCell();
+        var new_cell2 = new_row.insertCell();
+        var new_cell3 = new_row.insertCell();
+        var new_cell4 = new_row.insertCell();
+
+        new_cell0.style.display = 'none';
+        new_cell1.style.textAlign='center';
+        new_cell2.style.textAlign='center';
+        new_cell3.style.textAlign='center';
+        new_cell4.style.textAlign='center';
+
+        //td안에 넣을 HTML
+        new_cell0.innerHTML = add_cell0;
+        new_cell1.innerHTML = add_cell1;
+        new_cell2.innerHTML = add_cell2;
+        new_cell3.innerHTML = add_cell3;
+        new_cell4.innerHTML = add_cell4;
+        //행추가할때마다 행개수 +1
+        count++;
+    }
+
+</script>
